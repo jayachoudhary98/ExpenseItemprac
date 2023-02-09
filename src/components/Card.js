@@ -2,10 +2,13 @@ import React from 'react'
 import './card.css';
 
 const Card = (props) => {
-    const classes ='card' + props.className;
+  const {className, childern}= props
+    const classes ='card' + className;
+    console.log(props,"...hello")
   return (
-    <div className={classes}>{props.childern}</div>
+    <div className={classes}>{childern}</div>
     )
+
 }
 
 export default Card

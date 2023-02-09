@@ -1,7 +1,9 @@
 import React, { useState } from 'react'
 import './ExpenseItem.css'
 import ExpenseDate from './ExpenseDate'
+import Card from './Card'
 // import Card from './Card'
+
 
 const ExpenseItem = (props) => {
     // // let expenseDate = new Date();
@@ -10,23 +12,24 @@ const ExpenseItem = (props) => {
     // const day= props.date.toLocalString('en-US', {day: '2-digit'});
 
     // let title= props.title;
-    const [newTitle, setNewTitle]= useState("");
-    const changeHandler= (e) =>{
-        setNewTitle(e.target.value);
-        console.log(newTitle)
+    // const [newTitle, setNewTitle]= useState("");
+    // const changeHandler= (e) =>{
+    //     setNewTitle(e.target.value);
+    //     console.log(newTitle)
 
-    }
+    // }
 
-    const [title, setTitle]= useState(props.title);
-    const ClickHandle = () =>{
-        // title= "new title...";
-        // console.log(title);
-        setTitle(newTitle);
+    // const [title, setTitle]= useState(props.title);
+    // const ClickHandle = () =>{
+    //     // title= "new title...";
+    //     // console.log(title);
+    //     setTitle(newTitle);
 
-    }
+    // }
 
   return (
     <div className='expense_item'>
+      <>
         <ExpenseDate date={props.date}/>
     
        {/* <div>
@@ -37,13 +40,14 @@ const ExpenseItem = (props) => {
         <div>{day}</div> */}
     
         <div className='expense_description'>
-            <h2>{title}</h2>
+            <h2>{props.title}</h2>
             <div className='expense_price'>
                {props.amount}
             </div>
         </div>
-        <input type='text' value={newTitle} onChange={changeHandler}></input>
-        <button onClick={ClickHandle}>Change Title</button>
+        {/* <input type='text' value={newTitle} onChange={changeHandler}></input>
+        <button onClick={ClickHandle}>Change Title</button> */}
+       </>
     </div>
   )
 }
